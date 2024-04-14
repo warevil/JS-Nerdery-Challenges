@@ -106,8 +106,25 @@ Invoking "digitSum(10)" should return "27".
 Since 10! === 3628800 and you sum 3 + 6 + 2 + 8 + 8 + 0 + 0
 ***** */
 
+function factorial(n) {
+  if (n === 0 || n === 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+
+function sumDigits(number) {
+  let sum = 0;
+  while (number > 0) {
+    sum += number % 10;
+    number = Math.floor(number / 10);
+  }
+  return sum;
+}
+
 const digitSum = (n) => {
-  // YOUR CODE HERE...
+  const fact = factorial(n);
+  return sumDigits(fact);
 };
 
 digitSum(10);
