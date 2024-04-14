@@ -80,7 +80,9 @@ The last 3 digits for the sum of powers from 1 to 10 is "317"
 ***** */
 
 const ownPower = (number, lastDigits) => {
-  // YOUR CODE HERE...
+  let result = BigInt(number) ** BigInt(number);
+  result = result.toString();
+  return result.slice(-1 * lastDigits);
 };
 
 ownPower(10, 3);
